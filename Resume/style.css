@@ -1,55 +1,118 @@
-/* NAV MENU */
-.menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    background: #333;
-    padding: 0;
-    margin: 0;
+
+:root {
+  --bg: #0f172a;
+  --panel: #020617;
+  --accent: #22d3ee;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
 }
 
-.menu li {
-    position: relative;
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-.menu li a {
-    display: block;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: var(--text);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
 }
 
-.menu li a:hover {
-    background: #555;
+aside {
+  background: var(--panel);
+  padding: 30px 20px;
+  border-right: 1px solid #1e293b;
 }
 
-/* DROPDOWN */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: #444;
-    min-width: 200px;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
+aside h1 {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
-.dropdown-content li a {
-    padding: 12px 15px;
+aside ul {
+  list-style: none;
+  padding: 0;
 }
 
-/* SHOW DROPDOWN ON HOVER */
-.dropdown:hover .dropdown-content {
-    display: block;
+aside ul li {
+  margin-bottom: 18px;
 }
 
-/* MOBILE FRIENDLY STACK */
-@media (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-    }
+aside ul li a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+}
 
-    .dropdown-content {
-        position: static;
-    }
+aside ul li a:hover {
+  color: var(--accent);
+}
+
+main {
+  padding: 60px;
+}
+
+section {
+  max-width: 900px;
+}
+
+h2 {
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid var(--accent);
+}
+
+.profile-text p {
+  margin-top: 0;
+}
+
+.cert-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cert-list li {
+  margin-bottom: 15px;
+}
+
+.cert-list a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 12px 16px;
+  display: block;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+}
+
+.cert-list a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
